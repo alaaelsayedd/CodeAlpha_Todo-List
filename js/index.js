@@ -7,7 +7,6 @@ let activeLink = document.querySelector(".allactive");
 let competeLink = document.querySelector(".compete");
 let TaskNameRegex = /[a-zA-Z0-9 _-]{2,}/;
 
-
 let tasksList = [];
 if (window.localStorage.getItem("taskList") != null) {
   tasksList = [...JSON.parse(window.localStorage.getItem("taskList"))];
@@ -23,6 +22,8 @@ button.addEventListener("click", () => {
   
     tasksList.push(task);
     window.localStorage.setItem("taskList", JSON.stringify(tasksList));
+    removeActiveClassForAll();
+    addActiveClassToNavLink(allLInk);
     displayTasks(tasksList);
     clearInput();
   }
@@ -56,8 +57,7 @@ function displayTasks(arr) {
         .classList.add("text-decoration-line-through");
       document.querySelector(`.done${index}`).classList.add("d-none");
       document.querySelector(`.edit${index}`).classList.add("d-none");
-      removeActiveClassForAll();
-      addActiveClassToNavLink(allLInk);
+     
     }
   });
 }
