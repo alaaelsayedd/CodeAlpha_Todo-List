@@ -1,0 +1,63 @@
+body {
+  background-image: url("../imgs/7124fd67fa3a65203a12712b53e0a603.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.form-control:focus {
+  border-color: transparent;
+  box-shadow: none;
+}
+.icon {
+  background-color: #89b3ee;
+  color: white;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.task-icon div i {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  column-gap: 20px;
+  font-size: 15px;
+  font-weight: 400;
+}
+.nav-menu ul li {
+  padding: 3px;
+  cursor: pointer;
+}
+
+.nav-menu ul li.active {
+  font-weight: 600;
+  position: relative;
+}
+.nav-menu ul li.active::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  animation: animate 1s forwards;
+}
+
+@keyframes animate {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
